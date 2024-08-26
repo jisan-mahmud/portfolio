@@ -5,47 +5,31 @@
     <section class="w-[90%] drop-shadow m-auto border rounded-3xl border-neutral-600 border-t-0 text-white sm:mt-10 mt-8 pb-6">
     <div class="lg:flex md:w-10/12 m-auto ">
         <div class="lg:w-7/12 sm:p-8 p-5 m-auto delay-[300ms] duration-[600ms] taos:[transform:translate3d(-200px,0,0)_scale(0.6)] taos:opacity-0" data-taos-offset="100">
-            <h1 class="sm:text-3xl text-xl sm:font-bold mb-6 flex gap-2 items-end w-fit whitespace-nowrap">HI, I AM <p class="sm:text-2xl text-base typing-animation text-[#c7c7c7]">JISAN MAHMUD</p></h1>
-            <p class="text-[#9C9C9C] leading-relaxed">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo reiciendis minus ipsum? Aut obcaecati officia, voluptatibus quas, distinctio excepturi doloribus blanditiis nam deserunt ea illo qui iure sequi minima eligendi!</p>
-            <button id="shadow" class="bg-[#3F8E00] sm:text-base text-sm sm:rounded-sm rounded-md font-medium sm:pl-10 pl-5 sm:pr-10 pr-5 pt-3 pb-3 sm:mt-10 mt-8">Let's get started ></button>
+            <h1 class="sm:text-3xl text-xl sm:font-bold mb-6 flex gap-2 items-end w-fit whitespace-nowrap">HI, I AM <p class="sm:text-2xl text-base typing-animation text-[#c7c7c7]">{{basic_info.name}}</p></h1>
+            <p class="text-[#9C9C9C] leading-relaxed">{{basic_info.about}}</p>
+            <a href="#contact"><button id="shadow" class="bg-[#3F8E00] text-white sm:text-base text-sm sm:rounded-sm rounded-md font-bold sm:pl-10 pl-5 sm:pr-10 pr-5 pt-3 pb-3 sm:mt-10 mt-8">Contact with me ></button></a>
         </div>
         <div class="lg:flex items-center hidden w-5/12 delay-[300ms] duration-[600ms] taos:[transform:translate3d(200px,0,0)_scale(1.2)] taos:opacity-0" data-taos-offset="100">
-            <img class="rounded-full lg:w-[300px] m-auto" src="{% static 'images/jisan.jpg' %}" alt="">
+            <img class="rounded-full lg:w-[300px] m-auto" src="{{basic_info.image.url}}" alt="">
         </div>
     </div>
     <div class="flex-row md:w-10/12 m-auto sm:p-8 p-5 sm:pt-10 pt-4">
         <h1 class="text-lg delay-[300ms] duration-[600ms] taos:translate-x-[-100%] taos:invisible" data-taos-offset="100">WORKED WITH: </h1>
         <ul id="skills" class="grid grid-cols-2 text-center sm:flex sm:flex-wrap text-2xl sm:text-3xl md:text-4xl justify-center sm:justify-start gap-4 mt-4 delay-[300ms] duration-[600ms] taos:translate-x-[100%] taos:invisible" data-taos-offset="100">
-            <li class="hover:text-[#ffd845] hover:animate-bounce hover:bg-[#f5f5dc] border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
-                <i class="devicon-python-plain"></i>
+           {% if skills %}
+             {% for skill in skills %}
+             <li class="hover:text-[#ffd845] hover:animate-bounce hover:bg-[#f5f5dc] border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
+                {{skill.technology_icon|safe}}
             </li>
-            <li class="hover:text-[#ffd845] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
-                <i class="devicon-javascript-plain"></i>
-            </li>
-            <li class="hover:text-[#004482] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
-                <i class="devicon-cplusplus-plain"></i>
-            </li>
-            <li class="hover:text-[#092e20] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
-                <i class="devicon-django-plain"></i>
-            </li>
-            <li class="hover:text-[#a30000] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
-                <i class="devicon-djangorest-plain"></i>
-            </li>
-            <li class="hover:text-[#00618a] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
-                <i class="devicon-mysql-original"></i>
-            </li>
-            <li class="hover:text-[#0f80cc] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
-                <i class="devicon-sqlite-plain-wordmark"></i>
-            </li>
-            <li class="hover:text-[#181616] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
-                <i class="devicon-github-original"></i>
-            </li>
+             {% endfor %}
+           {% endif %}
         </ul>
         
     </div>
     </section>
 {% endblock hero_section %}
 {% block content %}
+    {% if projects %}
     <!-- project -->
     <div id="projects">
         <!-- title section -->
@@ -53,45 +37,49 @@
             <h1 class="text-3xl mb-6 font-bold">Projects</h1>
             <p class="text-[#727272]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem maxime dolor aspernatur deleniti quas porro quod sunt quae repellat, esse dicta ullam quasi odit.</p>
         </div>
-        <!-- left side project -->
-        <div class="lg:-mx-6 mt-14 mb-14 lg:flex lg:items-center delay-[300ms] duration-[600ms] taos:translate-x-[100%] taos:invisible" data-taos-offset="300">
-            <img class="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-80 rounded-lg lg:h-[20rem]" src="{% static 'images/project.jpg' %}" alt="">
+        {% for project in projects %}
+          {% if not project.id|divisibleby:2 %}
+            <!-- left side project -->
+            <div class="lg:-mx-6 mt-14 mb-14 lg:flex lg:items-center delay-[300ms] duration-[600ms] taos:translate-x-[100%] taos:invisible" data-taos-offset="300">
+                <img class="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-80 rounded-lg lg:h-[20rem]" src="{{project.image.url}}" alt="">
 
-            <div class="mt-8 lg:w-1/2 lg:px-6 lg:mt-0">
-                <p class="text-5xl font-semibold text-blue-500 ">“</p>
+                <div class="mt-8 lg:w-1/2 lg:px-6 lg:mt-0">
+                    <p class="text-5xl font-semibold text-blue-500 ">“</p>
 
-                <h1 class="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl lg:w-96">
-                    Where project name
-                </h1>
+                    <h1 class="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl lg:w-96">
+                        {{project.title}}
+                    </h1>
 
-                <p class="max-w-lg mt-6 text-gray-500 dark:text-gray-400 ">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
-                    tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
-                    aperiam dolorum.
-                </p>
-                <button id="shadow2" class="bg-[#3F8E00] sm:rounded-sm rounded-md font-medium sm:pl-10 pl-5 sm:pr-10 pr-5 sm:pt-3 pt-2 sm:pb-3 pb-2 sm:mt-10 mt-8">Know me ></button>
+                    <p class="max-w-lg mt-6 text-gray-500 dark:text-gray-400 ">
+                        {{project.description}}
+                    </p>
+                    <button id="shadow2" class="bg-[#3F8E00] sm:rounded-sm rounded-md font-medium sm:pl-10 pl-5 sm:pr-10 pr-5 sm:pt-3 pt-2 sm:pb-3 pb-2 sm:mt-10 mt-8">Know me ></button>
+                </div>
             </div>
-        </div>
-        <!-- right side project -->
-        <div class="lg:-mx-6 mt-14 mb-14 lg:flex flex-row-reverse lg:items-center delay-[300ms] duration-[600ms] taos:translate-x-[-100%] taos:invisible" data-taos-offset="300">
-            <img class="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-80 rounded-lg lg:h-[20rem]" src="{% static 'images/project.jpg' %}" alt="">
-            <div class="mt-8 lg:w-1/2 lg:px-6 lg:mt-0">
-                <p class="text-5xl font-semibold text-blue-500 ">“</p>
+          {% else %}
+            <!-- right side project -->
+            <div class="lg:-mx-6 mt-14 mb-14 lg:flex flex-row-reverse lg:items-center delay-[300ms] duration-[600ms] taos:translate-x-[-100%] taos:invisible" data-taos-offset="300">
+                <img class="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-80 rounded-lg lg:h-[20rem]" src="{% static 'images/project.jpg' %}" alt="">
+                <div class="mt-8 lg:w-1/2 lg:px-6 lg:mt-0">
+                    <p class="text-5xl font-semibold text-blue-500 ">“</p>
 
-                <h1 class="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl lg:w-96">
-                    Where project name
-                </h1>
+                    <h1 class="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl lg:w-96">
+                        Where project name
+                    </h1>
 
-                <p class="max-w-lg mt-6 text-gray-500 dark:text-gray-400 ">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
-                    tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
-                    aperiam dolorum.
-                </p>
-                <button id="shadow2" class="bg-[#3F8E00] sm:rounded-sm rounded-md font-medium sm:pl-10 pl-5 sm:pr-10 pr-5 sm:pt-3 pt-2 sm:pb-3 pb-2 sm:mt-10 mt-8">Know me ></button>
+                    <p class="max-w-lg mt-6 text-gray-500 dark:text-gray-400 ">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
+                        tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
+                        aperiam dolorum.
+                    </p>
+                    <button id="shadow2" class="bg-[#3F8E00] sm:rounded-sm rounded-md font-medium sm:pl-10 pl-5 sm:pr-10 pr-5 sm:pt-3 pt-2 sm:pb-3 pb-2 sm:mt-10 mt-8">Know me ></button>
+                </div>
             </div>
-        </div>
+          {% endif %}
+        {% endfor %}
     </div>
     <!-- end recent work section -->
+    {% endif %}
 
     <!-- github profie -->
     <div id="github_profile" class="mt-20">
@@ -159,11 +147,11 @@
             <div class="sm:w-2/5 mt-4 mt-b text-center">
                 <div class="rounded-lg bg-[#241f3775] border border-neutral-600 p-8">
                     <i class="fa-solid fa-envelope text-3xl"></i>
-                    <p class="lg:text-lg break-words">jisan.mahmud203@gmail.com</p>
+                    <p class="lg:text-lg break-words">{{basic_info.email}}</p>
                 </div>
                 <div class="rounded-lg bg-[#241f3775] border border-neutral-600 mt-4 mb-4 p-4">
                     <i class="fa-brands fa-linkedin text-3xl"></i>
-                    <p class="lg:text-lg">linkedin.com/in/jisan-mahmud203</p>
+                    <p class="lg:text-lg">{{basic_info.linkedin|slice:"24:"}}</p>
                 </div>
             </div>
             <!-- contect form -->

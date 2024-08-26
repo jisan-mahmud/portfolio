@@ -40,9 +40,15 @@
                 <!-- social media icon -->
                 <div class="icon">
                     <ul class="text-[#3F8E00] flex text-xl gap-10">
-                        <li class="hover:text-[#9C9C9C]"><i class="fa-brands fa-linkedin"></i></li>
-                        <li class="hover:text-[#9C9C9C]"><i class="fa-brands fa-github"></i></li>
-                        <li class="hover:text-[#9C9C9C]"><i class="fa-brands fa-facebook"></i></li>
+                        {% if basic_info.linkedin %}
+                            <li class="hover:text-[#9C9C9C]"><a href="{{basic_info.linkedin}}"><i class="fa-brands fa-linkedin"></i></a></li>
+                        {% endif %}
+                        {% if basic_info.github %}
+                            <li class="hover:text-[#9C9C9C]"><a href="{{basic_info.github}}"><i class="fa-brands fa-github"></i></a></li>
+                        {% endif %}
+                        {% if basic_info.facebook %}
+                            <li class="hover:text-[#9C9C9C]"><a href="{{basic_info.facebook}}"><i class="fa-brands fa-facebook"></i></a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
