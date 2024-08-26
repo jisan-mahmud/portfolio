@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load static %}
+{% block hero_section %}
+    <!-- Hero section -->
+    <section class="w-[90%] drop-shadow m-auto border rounded-3xl border-neutral-600 border-t-0 text-white sm:mt-10 mt-8 pb-6">
+    <div class="lg:flex md:w-10/12 m-auto ">
+        <div class="lg:w-7/12 sm:p-8 p-5 m-auto delay-[300ms] duration-[600ms] taos:[transform:translate3d(-200px,0,0)_scale(0.6)] taos:opacity-0" data-taos-offset="100">
+            <h1 class="sm:text-3xl text-xl sm:font-bold mb-6 flex gap-2 items-end w-fit whitespace-nowrap">HI, I AM <p class="sm:text-2xl text-base typing-animation text-[#c7c7c7]">JISAN MAHMUD</p></h1>
+            <p class="text-[#9C9C9C] leading-relaxed">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo reiciendis minus ipsum? Aut obcaecati officia, voluptatibus quas, distinctio excepturi doloribus blanditiis nam deserunt ea illo qui iure sequi minima eligendi!</p>
+            <button id="shadow" class="bg-[#3F8E00] sm:text-base text-sm sm:rounded-sm rounded-md font-medium sm:pl-10 pl-5 sm:pr-10 pr-5 pt-3 pb-3 sm:mt-10 mt-8">Let's get started ></button>
+        </div>
+        <div class="lg:flex items-center hidden w-5/12 delay-[300ms] duration-[600ms] taos:[transform:translate3d(200px,0,0)_scale(1.2)] taos:opacity-0" data-taos-offset="100">
+            <img class="rounded-full lg:w-[300px] m-auto" src="{% static 'images/jisan.jpg' %}" alt="">
+        </div>
+    </div>
+    <div class="flex-row md:w-10/12 m-auto sm:p-8 p-5 sm:pt-10 pt-4">
+        <h1 class="text-lg delay-[300ms] duration-[600ms] taos:translate-x-[-100%] taos:invisible" data-taos-offset="100">WORKED WITH: </h1>
+        <ul id="skills" class="grid grid-cols-2 text-center sm:flex sm:flex-wrap text-2xl sm:text-3xl md:text-4xl justify-center sm:justify-start gap-4 mt-4 delay-[300ms] duration-[600ms] taos:translate-x-[100%] taos:invisible" data-taos-offset="100">
+            <li class="hover:text-[#ffd845] hover:animate-bounce hover:bg-[#f5f5dc] border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
+                <i class="devicon-python-plain"></i>
+            </li>
+            <li class="hover:text-[#ffd845] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
+                <i class="devicon-javascript-plain"></i>
+            </li>
+            <li class="hover:text-[#004482] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
+                <i class="devicon-cplusplus-plain"></i>
+            </li>
+            <li class="hover:text-[#092e20] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
+                <i class="devicon-django-plain"></i>
+            </li>
+            <li class="hover:text-[#a30000] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
+                <i class="devicon-djangorest-plain"></i>
+            </li>
+            <li class="hover:text-[#00618a] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
+                <i class="devicon-mysql-original"></i>
+            </li>
+            <li class="hover:text-[#0f80cc] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
+                <i class="devicon-sqlite-plain-wordmark"></i>
+            </li>
+            <li class="hover:text-[#181616] hover:bg-[#f5f5dc] hover:animate-bounce border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
+                <i class="devicon-github-original"></i>
+            </li>
+        </ul>
+        
+    </div>
+    </section>
+{% endblock hero_section %}
+{% block content %}
+    <!-- project -->
+    <div id="projects">
+        <!-- title section -->
+        <div class="md:w-6/12 w-10/12  m-auto text-center duration-[1000ms] taos:opacity-0" data-taos-offset="300">
+            <h1 class="text-3xl mb-6 font-bold">Projects</h1>
+            <p class="text-[#727272]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem maxime dolor aspernatur deleniti quas porro quod sunt quae repellat, esse dicta ullam quasi odit.</p>
+        </div>
+        <!-- left side project -->
+        <div class="lg:-mx-6 mt-14 mb-14 lg:flex lg:items-center delay-[300ms] duration-[600ms] taos:translate-x-[100%] taos:invisible" data-taos-offset="300">
+            <img class="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-80 rounded-lg lg:h-[20rem]" src="{% static 'images/project.jpg' %}" alt="">
+
+            <div class="mt-8 lg:w-1/2 lg:px-6 lg:mt-0">
+                <p class="text-5xl font-semibold text-blue-500 ">“</p>
+
+                <h1 class="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl lg:w-96">
+                    Where project name
+                </h1>
+
+                <p class="max-w-lg mt-6 text-gray-500 dark:text-gray-400 ">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
+                    tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
+                    aperiam dolorum.
+                </p>
+                <button id="shadow2" class="bg-[#3F8E00] sm:rounded-sm rounded-md font-medium sm:pl-10 pl-5 sm:pr-10 pr-5 sm:pt-3 pt-2 sm:pb-3 pb-2 sm:mt-10 mt-8">Know me ></button>
+            </div>
+        </div>
+        <!-- right side project -->
+        <div class="lg:-mx-6 mt-14 mb-14 lg:flex flex-row-reverse lg:items-center delay-[300ms] duration-[600ms] taos:translate-x-[-100%] taos:invisible" data-taos-offset="300">
+            <img class="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-80 rounded-lg lg:h-[20rem]" src="{% static 'images/project.jpg' %}" alt="">
+            <div class="mt-8 lg:w-1/2 lg:px-6 lg:mt-0">
+                <p class="text-5xl font-semibold text-blue-500 ">“</p>
+
+                <h1 class="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl lg:w-96">
+                    Where project name
+                </h1>
+
+                <p class="max-w-lg mt-6 text-gray-500 dark:text-gray-400 ">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
+                    tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
+                    aperiam dolorum.
+                </p>
+                <button id="shadow2" class="bg-[#3F8E00] sm:rounded-sm rounded-md font-medium sm:pl-10 pl-5 sm:pr-10 pr-5 sm:pt-3 pt-2 sm:pb-3 pb-2 sm:mt-10 mt-8">Know me ></button>
+            </div>
+        </div>
+    </div>
+    <!-- end recent work section -->
+
+    <!-- github profie -->
+    <div id="github_profile" class="mt-20">
+        <h1 class="text-3xl text-center mb-10">GitHub Profile</h1>
+        <div class="flex md:gap-6 lg:gap-8 gap-3 bg-[#241f3775] md:p-14 p-6 rounded-lg justify-center duration-[600ms] taos:[transform:perspective(2500px)_rotateX(100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="100">
+            <!-- left side content -->
+        <div class="w-2/12 hidden sm:block">
+            <img class="md:w-[110px] lg:w-[120px] w-[70px] rounded-full" src="{% static 'images/jisan.jpg' %}" alt="">
+        </div>
+
+        <!-- right side content -->
+        <div class="sm:w-10/12 w-full">
+            <!-- about section -->
+            <div class="sm:flex flex-row justify-between">
+                <!-- right section -->
+                <div>
+                    <div class="flex items-center gap-3">
+                        <img class="w-[50px] h-[50px] sm:hidden block rounded-full" src="{% static 'images/jisan.jpg' %}" alt="Jisan Mahmud">
+                        <div class="w-full">
+                            <h1 class="text-xl sm:text-2xl md:text-3xl">Jisan Mahmud</h1>
+                            <a href="#" class="text-sm sm:text-base md:text-lg">jisan-mahmud</a>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-gray-400 sm:text-base text-xs">Programmer || Problem Solver || Backend Developer</p>
+                </div>
+                <!-- left section -->
+                <div>
+                    <span class="sm:text-base text-xs">Joined 20 jan 2022</span>
+                </div>
+            </div>
+            <!-- reopository, follwers and following section -->
+            <div class="flex items-end justify-around text-center rounded-xl md:mt-8 md:mb-8 mt-6 mb-6 md:p-6 sm:3 p-2 bg-[#021526]">
+                <!-- repository -->
+                <div class="">
+                    <span class="sm:text-base text-sm">Repos</span><br>
+                    <b class="md:text-3xl sm:text-xl text-base p-0">3</b>
+                </div>
+                <!-- followers -->
+                <div class="">
+                    <span class="sm:text-base text-sm">Followers</span><br>
+                    <b class="md:text-3xl sm:text-xl text-base p-0">300</b>
+                </div class="">
+                <!-- following -->
+                <div class="!text-sm">
+                    <span class="sm:text-base text-sm">Following</span><br>
+                    <b class="md:text-3xl sm:text-xl text-base p-0">3</b>
+                </div>
+            </div>
+            <!-- Extra link -->
+            <ul class="flex flex-wrap justify-center sm:text-base text-sm sm:justify-between gap-4 p-1">
+                <li class="">Facebook</li>
+                <li class="">YouTube</li>
+                <li class="">Twitter</li>
+                <li class="">LinkedIn</li>
+            </ul>                
+        </div>
+        </div>
+    </div>
+
+    <!-- contact section -->
+    <div class="mt-16">
+        <h1 class="text-3xl text-center mb-6">Contact</h1>
+        <div class="flex sm:flex-row flex-col-reverse lg:gap-32 sm:gap-14 gap-6 delay-[300ms] duration-[600ms] taos:translate-x-[-200px] taos:opacity-0" data-taos-offset="100">
+            <!-- contect with email and linkedin -->
+            <div class="sm:w-2/5 mt-4 mt-b text-center">
+                <div class="rounded-lg bg-[#241f3775] border border-neutral-600 p-8">
+                    <i class="fa-solid fa-envelope text-3xl"></i>
+                    <p class="lg:text-lg break-words">jisan.mahmud203@gmail.com</p>
+                </div>
+                <div class="rounded-lg bg-[#241f3775] border border-neutral-600 mt-4 mb-4 p-4">
+                    <i class="fa-brands fa-linkedin text-3xl"></i>
+                    <p class="lg:text-lg">linkedin.com/in/jisan-mahmud203</p>
+                </div>
+            </div>
+            <!-- contect form -->
+            <div id="contact" class="sm:w-3/5 delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0" data-taos-offset="100">
+                <form class="text-white">
+                    <div class="flex mt-4 mb-4 gap-4">
+                        <input class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="text" placeholder="First Name">
+                        <input class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="text" placeholder="Last Name">
+                    </div>
+                    <div class="mt-4 mb-4">
+                        <input class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="email" placeholder="Email Address">
+                    </div>
+                    <div class="mt-4 mb-4">
+                        <input class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="text" placeholder="Message">
+                    </div>
+                    <button id="shadow" class="bg-[#3F8E00] w-full p-3 mt-4 mb-4 sm:text-base text-sm sm:rounded-sm rounded-md font-bold" type="submit"><i class="fa-regular fa-paper-plane"></i> Sent</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

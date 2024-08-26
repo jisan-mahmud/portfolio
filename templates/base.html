@@ -1,0 +1,84 @@
+{% load static tailwind_tags %}
+{% load static %}
+{% load  compress %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% compress css %}
+        {% tailwind_css %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endcompress %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script src="https://kit.fontawesome.com/87115898c2.js" crossorigin="anonymous"></script>
+    <script>document.documentElement.classList.add('js')</script>
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="w-10/12 m-auto sm:gap-0 gap-6 flex justify-between pl-10 pr-10 sm:pl-0 sm:pr-0 pt-5 pb-3">
+                <!-- nessesary link -->
+                <div class="lg:hidden block">
+                    <div onclick="menu_ber(this)" class="text-[#cecece] !text-xl cursor-pointer">
+                        <i  class="fa-solid fa-bars menu_icon"></i>
+                    </div>
+                </div>
+    
+                <div class="link lg:block hidden">
+                    <ul class="flex gap-10 text-lg">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#github_profile">GitHub Profile</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- social media icon -->
+                <div class="icon">
+                    <ul class="text-[#3F8E00] flex text-xl gap-10">
+                        <li class="hover:text-[#9C9C9C]"><i class="fa-brands fa-linkedin"></i></li>
+                        <li class="hover:text-[#9C9C9C]"><i class="fa-brands fa-github"></i></li>
+                        <li class="hover:text-[#9C9C9C]"><i class="fa-brands fa-facebook"></i></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <ul id="menu_items" class="w-10/12 lg:!hidden m-auto hidden text-base pl-10 sm:pl-0">
+                <li><a href="#"><i class="fa-solid fa-arrow-right text-xs"></i> Home</a></li>
+                <li><a href="#projects"><i class="fa-solid fa-arrow-right text-xs"></i> Projects</a></li>
+                <li><a href="#github_profile"><i class="fa-solid fa-arrow-right text-xs"></i> GitHub Profile</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-arrow-right text-xs"></i> Contact</a></li>
+            </ul>
+        </nav>
+        {% block hero_section %}
+          
+        {% endblock%}
+    </header>
+    <main class="md:w-9/12 m-auto p-10 text-white">
+       {% block content %}
+         
+       {% endblock %}
+    </main>
+    <footer>
+        <div class="text-center font-bold m-4 text-white">
+            <a href="https://www.linkedin.com/in/jisan-mahmud203/">@Jisan Mahmud </a>
+            <span>#Fearless_Dreamer</span>
+        </div>
+    </footer>
+    {% compress js %}
+        <script src="{% static 'js/app.js' %}"></script>
+    {% endcompress %}
+    <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Enable smooth scrolling for the whole document
+            document.documentElement.style.scrollBehavior = "smooth";
+        });
+    </script>
+</body>
+</html>
