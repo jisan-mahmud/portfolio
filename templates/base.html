@@ -6,16 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% compress css %}
-        {% tailwind_css %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    {% endcompress %}
+    {% tailwind_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script src="https://kit.fontawesome.com/87115898c2.js" crossorigin="anonymous"></script>
-    <script>document.documentElement.classList.add('js')</script>
     <title>Home</title>
 </head>
 <body>
@@ -76,15 +73,7 @@
             <span>#Fearless_Dreamer</span>
         </div>
     </footer>
-    {% compress js %}
-        <script src="{% static 'js/app.js' %}"></script>
-    {% endcompress %}
+    <script src="{% static 'js/app.js' %}"></script>
     <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Enable smooth scrolling for the whole document
-            document.documentElement.style.scrollBehavior = "smooth";
-        });
-    </script>
 </body>
 </html>

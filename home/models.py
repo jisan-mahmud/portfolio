@@ -45,3 +45,18 @@ class Project(models.Model):
         return self.title
 
 
+class Contact(models.Model):
+    first_name = models.CharField(max_length= 50)
+    last_name = models.CharField(max_length= 50)
+    email = models.EmailField()
+    message = models.TextField()
+
+class GithubInfo(models.Model):
+    name = models.CharField(max_length= 100)
+    image = models.ImageField(upload_to= 'image/github')
+    username = models.CharField(max_length= 50)
+    bio = models.CharField(max_length= 100, blank= True, null= True)
+    joining_date = models.CharField(max_length= 50)
+    repos = models.IntegerField()
+    followers = models.IntegerField()
+    following = models.IntegerField()

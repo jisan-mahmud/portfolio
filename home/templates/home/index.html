@@ -101,7 +101,7 @@
                         <img class="w-[50px] h-[50px] sm:hidden block rounded-full" src="{{github_profile.image}}" alt="Jisan Mahmud">
                         <div class="w-full">
                             <h1 class="text-xl sm:text-2xl md:text-3xl">{{github_profile.name}}</h1>
-                            <a href="#" class="text-sm sm:text-base md:text-lg">@ {{github_profile.user_name}}</a>
+                            <a href="#" class="text-sm sm:text-base md:text-lg">@ {{github_profile.username}}</a>
                         </div>
                     </div>
                     <p class="mt-2 text-gray-400 sm:text-base text-xs">{{github_profile.bio}}</p>
@@ -161,15 +161,26 @@
                 <form class="text-white" method="POST">
                     {% csrf_token %}
                     <div class="flex mt-4 mb-4 gap-4">
-                        <input class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="text" placeholder="First Name">
-                        <input class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="text" placeholder="Last Name">
+                        <input name="first_name" class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="text" placeholder="First Name">
+                        <input name="last_name" class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="text" placeholder="Last Name">
                     </div>
                     <div class="mt-4 mb-4">
-                        <input class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="email" placeholder="Email Address">
+                        <input name="email" class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="email" placeholder="Email Address">
                     </div>
                     <div class="mt-4 mb-4">
-                        <input class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="text" placeholder="Message">
+                        <input name="message" class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600" type="text" placeholder="Message">
                     </div>
+                    {% for message in messages %}
+                        {% if "success" in message.tags %}
+                            <div class="p-4 text-green-800" role="alert">
+                                <span class="font-medium">Success alert!</span> {{ message }}
+                            </div>
+                        {% elif "error" in message.tags %}
+                            <div class="p-4 text-red-800" role="alert">
+                                <span class="font-medium">Failed alert!</span> {{ message }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                     <button id="shadow" class="bg-[#3F8E00] w-full p-3 mt-4 mb-4 sm:text-base text-sm sm:rounded-sm rounded-md font-bold" type="submit"><i class="fa-regular fa-paper-plane"></i> Sent</button>
                 </form>
             </div>

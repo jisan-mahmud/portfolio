@@ -1,7 +1,8 @@
 import requests
 from datetime import datetime
-def github_info():
-    url = 'https://api.github.com/users/jisan-mahmu'
+
+def github_data():
+    url = 'https://api.github.com/users/jisan-mahmud'
     token = 'your_token'
     headers = {
         'Authorization': f'token {token}',
@@ -13,7 +14,7 @@ def github_info():
         context = {
             'name': data['name'],
             'image': data['avatar_url'],
-            'user_name': data['login'],
+            'username': data['login'],
             'bio': data['bio'],
             'joining_date': created_at.strftime('%d %b %Y'),
             'repos': data['public_repos'],
@@ -22,6 +23,4 @@ def github_info():
         }
         return context
     else:
-        return response
-    
-print(github_info())
+        return 0
