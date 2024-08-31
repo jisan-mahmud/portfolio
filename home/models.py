@@ -28,7 +28,7 @@ class Skill(models.Model):
     user = models.ForeignKey(Basic_info, on_delete=models.CASCADE)
     technology_name = models.CharField(max_length= 100)
     technology_icon = models.CharField(max_length= 100)
-    description = models.TextField(blank= True)
+    color_code = models.CharField(max_length=20 ,blank= True)
 
     def __str__(self) -> str:
         return self.technology_name

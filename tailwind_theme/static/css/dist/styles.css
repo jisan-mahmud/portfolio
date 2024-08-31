@@ -1232,10 +1232,6 @@ select {
   transition-delay: 300ms;
 }
 
-.duration-\[1000ms\] {
-  transition-duration: 1000ms;
-}
-
 .duration-\[600ms\] {
   transition-duration: 600ms;
 }
@@ -1266,9 +1262,31 @@ select {
   color: rgb(156 156 156 / var(--tw-text-opacity));
 }
 
-.hover\:text-\[\#ffd845\]:hover {
+.hover\:text-\[\]:hover {
+  color: ;
+}
+
+.hover\:text-\[red\]:hover {
   --tw-text-opacity: 1;
-  color: rgb(255 216 69 / var(--tw-text-opacity));
+  color: rgb(255 0 0 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[\#00ddff\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 221 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[\#19acc2\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(25 172 194 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[\#\]:hover {
+  color: #;
+}
+
+.hover\:text-\[\{\{\}\}\]:hover {
+  color: {{}};
 }
 
 .focus\:outline-none:focus {

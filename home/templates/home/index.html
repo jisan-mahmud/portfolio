@@ -4,21 +4,26 @@
     <!-- Hero section -->
     <section class="w-[90%] drop-shadow m-auto border rounded-3xl border-neutral-600 border-t-0 text-white sm:mt-10 mt-8 pb-6">
     <div class="lg:flex md:w-10/12 m-auto ">
-        <div class="lg:w-7/12 sm:p-8 p-5 m-auto delay-[300ms] duration-[600ms] taos:[transform:translate3d(-200px,0,0)_scale(0.6)] taos:opacity-0" data-taos-offset="100">
+        <div class="lg:w-7/12 sm:p-8 p-5 m-auto" data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-duration="500">
             <h1 class="sm:text-3xl text-xl sm:font-bold mb-6 flex gap-2 items-end w-fit whitespace-nowrap">HI, I AM <p class="sm:text-2xl text-base typing-animation text-[#c7c7c7]">{{basic_info.name}}</p></h1>
             <p class="text-[#9C9C9C] leading-relaxed">{{basic_info.about}}</p>
             <a href="#contact"><button id="shadow" class="bg-[#3F8E00] text-white sm:text-base text-sm sm:rounded-sm rounded-md font-bold sm:pl-10 pl-5 sm:pr-10 pr-5 pt-3 pb-3 sm:mt-10 mt-8">Contact with me ></button></a>
         </div>
-        <div class="lg:flex items-center hidden w-5/12 delay-[300ms] duration-[600ms] taos:[transform:translate3d(200px,0,0)_scale(1.2)] taos:opacity-0" data-taos-offset="100">
-            <img class="rounded-full lg:w-[300px] m-auto" src="{{basic_info.image.url}}" alt="">
+        <div class="lg:flex items-center hidden w-5/12">
+            <img class="rounded-full lg:w-[300px] m-auto" src="{{basic_info.image.url}}" data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-duration="500" alt="">
         </div>
     </div>
-    <div class="flex-row md:w-10/12 m-auto sm:p-8 p-5 sm:pt-10 pt-4">
-        <h1 class="text-lg delay-[300ms] duration-[600ms] taos:translate-x-[-100%] taos:invisible" data-taos-offset="100">WORKED WITH: </h1>
-        <ul id="skills" class="grid grid-cols-2 text-center sm:flex sm:flex-wrap text-2xl sm:text-3xl md:text-4xl justify-center sm:justify-start gap-4 mt-4 delay-[300ms] duration-[600ms] taos:translate-x-[100%] taos:invisible" data-taos-offset="100">
+    <div class="flex-row md:w-10/12 m-auto sm:p-8 p-5 sm:pt-10 pt-4" data-aos="fade-up"
+    data-aos-duration="500">
+        <h1 class="text-lg">WORKED WITH: </h1>
+        <ul id="skills" class="grid grid-cols-2 text-center sm:flex sm:flex-wrap text-2xl sm:text-3xl md:text-4xl justify-center sm:justify-start gap-4 mt-4">
            {% if skills %}
              {% for skill in skills %}
-             <li class="hover:text-[#ffd845] hover:animate-bounce hover:bg-[#f5f5dc] border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
+             <li  onmouseover="this.style.color= '{{skill.color_code}}'" onmouseout="this.style.color= ''" class="hover:text-[{{ skill.color_code }}] hover:animate-bounce hover:bg-[#f5f5dc] border-2 rounded-lg border-neutral-600 pt-2 pb-2 pl-9 pr-9">
                 {{skill.technology_icon|safe}}
             </li>
              {% endfor %}
@@ -33,14 +38,16 @@
     <!-- project -->
     <div id="projects">
         <!-- title section -->
-        <div class="md:w-6/12 w-10/12  m-auto text-center duration-[1000ms] taos:opacity-0" data-taos-offset="300">
+        <div class="md:w-6/12 w-10/12  m-auto text-center" data-aos="fade-down" data-aos-duration="500">
             <h1 class="text-3xl mb-6 font-bold">Projects</h1>
             <p class="text-[#727272]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem maxime dolor aspernatur deleniti quas porro quod sunt quae repellat, esse dicta ullam quasi odit.</p>
         </div>
         {% for project in projects %}
           {% if not project.id|divisibleby:2 %}
             <!-- left side project -->
-            <div class="lg:-mx-6 mt-14 mb-14 lg:flex lg:items-center delay-[300ms] duration-[600ms] taos:translate-x-[100%] taos:invisible" data-taos-offset="300">
+            <div class="lg:-mx-6 mt-14 mb-14 lg:flex lg:items-center" data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-duration="500">
                 <img class="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-80 rounded-lg lg:h-[20rem]" src="{{project.image.url}}" alt="">
 
                 <div class="mt-8 lg:w-1/2 lg:px-6 lg:mt-0">
@@ -58,7 +65,9 @@
             </div>
           {% else %}
             <!-- right side project -->
-            <div class="lg:-mx-6 mt-14 mb-14 lg:flex flex-row-reverse lg:items-center delay-[300ms] duration-[600ms] taos:translate-x-[-100%] taos:invisible" data-taos-offset="300">
+            <div class="lg:-mx-6 mt-14 mb-14 lg:flex flex-row-reverse lg:items-center" data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-duration="500">
                 <img class="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-80 rounded-lg lg:h-[20rem]" src="{% static 'images/project.jpg' %}" alt="">
                 <div class="mt-8 lg:w-1/2 lg:px-6 lg:mt-0">
                     <p class="text-5xl font-semibold text-blue-500 ">“</p>
@@ -84,8 +93,10 @@
     <!-- github profie -->
     {% if github_profile %}
     <div id="github_profile" class="mt-20">
-        <h1 class="text-3xl text-center mb-10">GitHub Profile</h1>
-        <div class="flex md:gap-6 lg:gap-8 gap-3 bg-[#241f3775] md:p-14 p-6 rounded-lg justify-center duration-[600ms] taos:[transform:perspective(2500px)_rotateX(100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="100">
+        <h1 class="text-3xl text-center mb-10" data-aos="fade-down" data-aos-duration="500">GitHub Profile</h1>
+        <div class="flex md:gap-6 lg:gap-8 gap-3 bg-[#241f3775] md:p-14 p-6 rounded-lg justify-center" data-aos="fade-down"
+        data-aos-offset="300"
+        data-aos-duration="500">
             <!-- left side content -->
         <div class="w-2/12 hidden sm:block">
             <img class="md:w-[110px] lg:w-[120px] w-[70px] rounded-full" src="{{github_profile.image}}" alt="">
@@ -143,10 +154,12 @@
 
     <!-- contact section -->
     <div class="mt-16">
-        <h1 class="text-3xl text-center mb-6">Contact</h1>
-        <div class="flex sm:flex-row flex-col-reverse lg:gap-32 sm:gap-14 gap-6 delay-[300ms] duration-[600ms] taos:translate-x-[-200px] taos:opacity-0" data-taos-offset="100">
+        <h1 class="text-3xl text-center mb-6" data-aos="fade-down" data-aos-duration="500">Contact</h1>
+        <div class="flex sm:flex-row flex-col-reverse lg:gap-32 sm:gap-14 gap-6">
             <!-- contect with email and linkedin -->
-            <div class="sm:w-2/5 mt-4 mt-b text-center">
+            <div class="sm:w-2/5 mt-4 mt-b text-center" data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-duration="500">
                 <div class="rounded-lg bg-[#241f3775] border border-neutral-600 p-8">
                     <i class="fa-solid fa-envelope text-3xl"></i>
                     <p class="lg:text-lg break-words">{{basic_info.email}}</p>
@@ -157,7 +170,9 @@
                 </div>
             </div>
             <!-- contect form -->
-            <div id="contact" class="sm:w-3/5 delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0" data-taos-offset="100">
+            <div id="contact" class="sm:w-3/5" data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-duration="500">
                 <form class="text-white" method="POST">
                     {% csrf_token %}
                     <div class="flex mt-4 mb-4 gap-4">
