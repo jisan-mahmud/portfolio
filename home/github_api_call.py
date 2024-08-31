@@ -1,9 +1,10 @@
+import os
 import requests
 from datetime import datetime
 
 def github_data():
     url = 'https://api.github.com/users/jisan-mahmud'
-    token = 'your_token'
+    token = os.environ.get('github_access_token')
     headers = {
         'Authorization': f'token {token}',
     }
