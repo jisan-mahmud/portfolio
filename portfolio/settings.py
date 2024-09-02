@@ -43,12 +43,12 @@ INTERNAL_IPS = [
 ]
 # NPM_BIN_PATH = '/usr/local/bin/npm'
 
-# STATICFILES_FINDERS = (
-#     'django.contrib.staticfiles.finders.FileSystemFinder',
-#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#     # other finders..
-#     'compressor.finders.CompressorFinder',
-# )
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
 
 COMPRESS_ROOT = BASE_DIR / 'static'
 

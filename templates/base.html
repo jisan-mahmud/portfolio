@@ -6,8 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% compress css %}
     {% tailwind_css %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endcompress %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -73,7 +75,9 @@
             <span>#Fearless_Dreamer</span>
         </div>
     </footer>
+    {% compress js %}
     <script src="{% static 'js/app.js' %}"></script>
+    {% endcompress %}
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
