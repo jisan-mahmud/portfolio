@@ -60,7 +60,14 @@
                     <p class="max-w-lg mt-6 text-gray-500 dark:text-gray-400 ">
                         {{project.description}}
                     </p>
-                    <button id="shadow2" class="bg-[#3F8E00] sm:rounded-sm rounded-md font-medium sm:pl-10 pl-5 sm:pr-10 pr-5 sm:pt-3 pt-2 sm:pb-3 pb-2 sm:mt-10 mt-8">Know me ></button>
+                    <div class="flex gap-4 text-lg mt-2">
+                        {% if project.live_link %}
+                            <a  href="{{project.live_link}}"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        {% endif %}
+                        {% if project.github_repo_link %}
+                            <a href="{{project.github_repo_link}}"><i class="fa-brands fa-github"></i></a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
           {% else %}
@@ -81,7 +88,14 @@
                         tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
                         aperiam dolorum.
                     </p>
-                    <button id="shadow2" class="bg-[#3F8E00] sm:rounded-sm rounded-md font-medium sm:pl-10 pl-5 sm:pr-10 pr-5 sm:pt-3 pt-2 sm:pb-3 pb-2 sm:mt-10 mt-8">Know me ></button>
+                    <div class="flex gap-4 text-lg mt-2">
+                        {% if project.live_link %}
+                            <a  href="{{project.live_link}}"><i class="fa-solid fa-up-right-from-square"></i></a>
+                        {% endif %}
+                        {% if project.github_repo_link %}
+                            <a href="{{project.github_repo_link}}"><i class="fa-brands fa-github"></i></a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
           {% endif %}
