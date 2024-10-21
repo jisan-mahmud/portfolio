@@ -1,10 +1,12 @@
 import os
 import requests
 from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv()
 
 def github_data():
     url = 'https://api.github.com/users/jisan-mahmud'
-    token = os.environ.get('github_access_token')
+    token = os.getenv('github_access_token')
     headers = {
         'Authorization': f'token {token}',
     }
@@ -25,3 +27,5 @@ def github_data():
         return context
     else:
         return 0
+    
+github_data()

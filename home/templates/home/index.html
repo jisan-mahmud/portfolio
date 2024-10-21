@@ -75,18 +75,16 @@
             <div class="lg:-mx-6 mt-14 mb-14 lg:flex flex-row-reverse lg:items-center" data-aos="fade-right"
             data-aos-offset="200"
             data-aos-duration="500">
-                <img class="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-80 rounded-lg lg:h-[20rem]" src="{% static 'images/project.jpg' %}" alt="">
+            <img class="object-cover object-center lg:w-1/2 lg:mx-6 w-full h-80 rounded-lg lg:h-[20rem]" src="{{project.image.url}}" alt="">
                 <div class="mt-8 lg:w-1/2 lg:px-6 lg:mt-0">
                     <p class="text-5xl font-semibold text-blue-500 ">“</p>
 
                     <h1 class="text-2xl font-semibold text-gray-800 dark:text-white lg:text-3xl lg:w-96">
-                        Where project name
+                        {{project.title}}
                     </h1>
 
                     <p class="max-w-lg mt-6 text-gray-500 dark:text-gray-400 ">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
-                        tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
-                        aperiam dolorum.
+                        {{project.description}}
                     </p>
                     <div class="flex gap-4 text-lg mt-2">
                         {% if project.live_link %}
